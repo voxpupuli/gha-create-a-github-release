@@ -13,6 +13,14 @@ runs:
         with:
           fetch-depth: 0
 
+      - name: Checkout profile
+        uses: actions/checkout@v4
+        if: ${{ hashFiles('.github/release.yml') != '' }}
+        with:
+          repository: "${{ github.repository_owner }}/.github"
+          sparse-checkout: .github/release.yml
+          sparse-checkout-cone-mode: false
+
       - name: Create Release Page
         shell: bash
         env:
