@@ -50,5 +50,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create GitHub release
-        uses: voxpupuli/gha-create-a-github-release@main
+        uses: voxpupuli/gha-create-a-github-release@v1
 ```
